@@ -3,3 +3,4 @@
 - 04/20: Feladatleírás fejlesztése, extra funkciók kitalálása
 - 04/21: Feladatleírás fejlesztése, játékötlet
 - 04/25: Feladatleírás bővítése
+- 04/27: Feladatleírás kiegészítése, bővítése
