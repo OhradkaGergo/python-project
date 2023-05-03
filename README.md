@@ -4,3 +4,4 @@
 - 04/21: Feladatleírás fejlesztése, játékötlet
 - 04/25: Feladatleírás bővítése
 - 04/27: Feladatleírás kiegészítése, bővítése
+- 05/03: Tervezés elkezdése, Benzinszámítás, Adószámító funkció tervezésének elkezdése
