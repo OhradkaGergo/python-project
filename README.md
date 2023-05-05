@@ -6,3 +6,4 @@
 - 04/27: Feladatleírás kiegészítése, bővítése
 - 05/03: Tervezés elkezdése, Benzinszámítás, Adószámító funkció tervezésének elkezdése
 - 05/04: Adószámítás, Benzinszámító, Menü funkciók tervezésének folytatása
+- 05/05: Funkciók tervezésének folytatása
