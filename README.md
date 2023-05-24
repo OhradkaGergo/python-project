@@ -10,3 +10,4 @@
 - 05/10: Funkciók tervezésének folytatása
 - 05/11: Funkciók tervezésének folytatása
 - 05/12: Funkciók tervezésének folytatása
+- 05/17: Hibák kijavítása
