@@ -11,3 +11,4 @@
 - 05/11: Funkciók tervezésének folytatása
 - 05/12: Funkciók tervezésének folytatása
 - 05/17: Hibák kijavítása
+- 05/25: Tervek befejezése, kódolás elkezdése
