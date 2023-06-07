@@ -14,3 +14,4 @@
 - 05/25: Tervek befejezése, kódolás elkezdése
 # Megvalósítás
 - 05/31: Mapparendszer létrehozása
+- 06/07: Színes játék fejlesztése
