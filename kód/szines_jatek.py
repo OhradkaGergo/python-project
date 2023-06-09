@@ -68,7 +68,7 @@ szines_j_ablak.maxsize(width = 600, height = 400)
 
 objektiv = Label(szines_j_ablak, text = "Írd be, hogy milyen színűek a betűk, és nem azt, amit kiír!", font = ('Helvetica', 15))
 objektiv.pack()
-pontszam_label = Label(szines_j_ablak, text = "Írd be, hogy \"enter\" a játék kezdéséért!", font = ('Helvetica', 12))
+pontszam_label = Label(szines_j_ablak, text = "Nyomj egy \"enter\"-t a játék kezdéséért!", font = ('Helvetica', 12))
 pontszam_label.pack()
 ido_label = Label(szines_j_ablak, text = "Idő hátra: " + str(ido_hatra), font = ('Helvetica', 13))
 ido_label.pack()
