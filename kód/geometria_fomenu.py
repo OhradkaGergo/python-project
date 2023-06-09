@@ -1,8 +1,26 @@
 from tkinter import *
-from turtle import *
 
-def draw():
-    return
+def draw(id):
+    if id == 1:
+        canvas.create_line(165, 75, 165, 25, fill="blue", width=5)
+        canvas.create_line(100, 75, 165, 25, fill="blue", width=5)
+        canvas.create_line(100, 75, 165, 75, fill="blue", width=5)
+        return 
+    elif id == 2:
+        canvas.create_line(165, 75, 165, 25, fill="blue", width=5)
+        canvas.create_line(100, 75, 165, 25, fill="blue", width=5)
+        canvas.create_line(100, 75, 165, 75, fill="blue", width=5)
+        return
+    elif id == 3:
+        canvas.create_line(165, 75, 165, 25, fill="blue", width=5)
+        canvas.create_line(100, 75, 165, 25, fill="blue", width=5)
+        canvas.create_line(100, 75, 165, 75, fill="blue", width=5)
+        return
+    elif id == 4:
+        canvas.create_line(165, 75, 165, 25, fill="blue", width=5)
+        canvas.create_line(100, 75, 165, 25, fill="blue", width=5)
+        canvas.create_line(100, 75, 165, 75, fill="blue", width=5)
+        return
 
 
 geoablak = Tk()
@@ -58,13 +76,13 @@ item = can1.create_image(20, 20, image = photo)
 can1.place(x=150,y=350)
 
 
-haromszogoption = Radiobutton(geoablak, text="Háromszög", variable=selection, value=1)
-teglalapoption = Radiobutton(geoablak, text="Téglalap", variable=selection, value=2)
-negyszogoption = Radiobutton(geoablak, text="Négyszög", variable=selection, value=3)
-koroption = Radiobutton(geoablak, text="Kör", variable=selection, value=4)
+haromszogoption = Radiobutton(geoablak, text="Háromszög", variable=selection, value=1, command=draw(1))
+teglalapoption = Radiobutton(geoablak, text="Téglalap", variable=selection, value=2, command=draw(2))
+negyszogoption = Radiobutton(geoablak, text="Négyszög", variable=selection, value=3, command=draw(3))
+koroption = Radiobutton(geoablak, text="Kör", variable=selection, value=4, command=draw(4))
+global canvas
 canvas = Canvas(geoablak, width=290, height=120)
-uoh = canvas.create_rectangle(30,10,320,130, fill='black')
-
+canvas.create_rectangle(30,10,320,130, fill='black')
 
 
 haromszogoption.place(x=200,y=137)
@@ -72,5 +90,6 @@ teglalapoption.place(x=200,y=117)
 negyszogoption.place(x=300, y=137)
 koroption.place(x=300,y=117)
 canvas.place(x=130, y=170)
+
 
 geoablak.mainloop()
