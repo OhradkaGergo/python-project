@@ -1,37 +1,37 @@
+#PLACEHOLDER
 from tkinter import *
-from geometria_haromszog_kerulet import haromszogkerulet
-from geometria_haromszog_terulet import haromszogterulet
 
-#u149.create_rectangle(30,10,320,130, fill='black')
-#Y height: 120
-#X width: 290 (145)
-def haromszog(masterwindow):
+def negyzet(mainwindow):
     def handoff(id): 
         if id == 1:
-            haromszogterulet(haromszogselect)
+            print("Terulet")
+            with open("python-project\kód\geometria_negyzet_terulet.py") as li:
+                exec(li.read())
         elif id == 2:
-            haromszogkerulet(haromszogselect)
+            print("Kerulet")
+            with open("python-project\kód\geometria_negyzet_kerulet.py") as li:
+                exec(li.read())
 
     def drawtris():
         u149.create_polygon(30, 120, 125, 120, 125, 10, fill="green", outline="blue")
         u149.create_polygon(200, 120, 290, 120, 290, 10, fill="white", outline="blue", width=2)
 
     def drawt():
-        confirmbutton = Button(haromszogselect, text="Kiválasztás", command=lambda: handoff(1))
+        confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(1))
         confirmbutton.place(x=250, y=320)
 
 
     def drawk():
-        confirmbutton = Button(haromszogselect, text="Kiválasztás", command=lambda: handoff(2))
+        confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(2))
         confirmbutton.place(x=250, y=320)
 
-    haromszogselect = Toplevel(masterwindow, height=400, width=600)
-    haromszogselect.title("Python SPAR projekt")
-    haromszogselect.minsize(width = 600, height = 400)
-    haromszogselect.maxsize(width = 600, height = 400)
+    geoablak = Tk()
+    geoablak.title("Python SPAR projekt")
+    geoablak.minsize(width = 600, height = 400)
+    geoablak.maxsize(width = 600, height = 400)
     selection = IntVar()
     selection.set(1)
-    menusor = Frame(haromszogselect, width=600, height=400, bd=10, highlightbackground="green", highlightthickness=10)
+    menusor = Frame(geoablak, width=600, height=400, bd=10, highlightbackground="green", highlightthickness=10)
     menusor.pack(side = TOP, fill = X)
     menu1 = Menubutton(menusor, text = "Főoldal", underline = 0, bg="#EC4949", width=15, height=2)
     menu1.pack(side = LEFT)
@@ -68,20 +68,20 @@ def haromszog(masterwindow):
     menu6 = Menubutton(menusor, text = "Kilépés", underline = 0,bg="#EC4949", width=15, height=2)
     menu6.pack(side = LEFT)
     videos = Menu(menu6,tearoff="off", )
-    videos.add_command(label = "Kilépés", command = haromszogselect.destroy, underline = 0,background="#EC4949")
+    videos.add_command(label = "Kilépés", command = geoablak.destroy, underline = 0,background="#EC4949")
     menu6.config(menu = videos)
     ize2=Label(text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
     ize2.place(x=30,y=350)
-    can1 = Canvas(haromszogselect, width=10, height=10)
+    can1 = Canvas(geoablak, width=10, height=10)
     photo = PhotoImage(file='python-project\képek\spar-logo-1.png')
-    can1.create_image(20, 20, image = photo)
+    item = can1.create_image(20, 20, image = photo)
     can1.place(x=150,y=350)
 
 
-    u149 = Canvas(haromszogselect, width=290, height=120) #uoooh
-    teruletoption = Radiobutton(haromszogselect, text="Terület", variable=selection, value=1, command=drawt)
+    u149 = Canvas(geoablak, width=290, height=120) #uoooh
+    teruletoption = Radiobutton(geoablak, text="Terület", variable=selection, value=1, command=drawt)
     teruletoption.select()
-    keruletoption = Radiobutton(haromszogselect, text="Kerület", variable=selection, value=2, command=drawk)
+    keruletoption = Radiobutton(geoablak, text="Kerület", variable=selection, value=2, command=drawk)
     drawtris()
     drawt()
 
@@ -90,4 +90,4 @@ def haromszog(masterwindow):
     keruletoption.place(x=340,y=117)
     u149.place(x=130, y=135)
 
-    haromszogselect.mainloop()
+    geoablak.mainloop()

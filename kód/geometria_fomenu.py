@@ -1,23 +1,22 @@
 from tkinter import *
-
+from geometria_kivalaszto_haromszog import haromszog
+from geometria_kivalaszto_teglalap import teglalap
+from geometria_kivalaszto_negyzet import negyzet
+from geometria_kivalaszto_kor import kor
 
 def handoff(id): 
     if id == 1:
-        with open("python-project\kód\geometria_kivalaszto_haromszog.py") as li:
-            exec(li.read())
+        haromszog(geoablak)
     elif id == 2:
-        with open("python-project\kód\geometria_kivalaszto_teglalap.py") as li:
-            exec(li.read())
+        teglalap(geoablak)
     elif id == 3:
-        with open("python-project\kód\geometria_kivalaszto_negyzet.py") as li:
-            exec(li.read())
+        negyzet(geoablak)
     elif id == 4:
-        with open("python-project\kód\geometria_kivalaszto_kor.py") as li:
-            exec(li.read())
+        kor(geoablak)
 
 def drawtriangle():
     print(selection.get())
-    confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(1))
+    confirmbutton = Button(geoablak, text="Kiválasztás", command=lambda: handoff(1))
     confirmbutton.place(x=250, y=320)
     u149.create_rectangle(30,10,320,130, fill='black')
     u149.create_line(186, 92, 186, 25, fill="white", width=5)
@@ -27,7 +26,7 @@ def drawtriangle():
 
 def drawbrick():
     print(selection.get())
-    confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(2))
+    confirmbutton = Button(geoablak, text="Kiválasztás", command=lambda: handoff(2))
     confirmbutton.place(x=250, y=320)
     u149.create_rectangle(30,10,320,130, fill='black')
     u149.create_line(110, 90, 110, 35, fill="white", width=5)
@@ -37,7 +36,7 @@ def drawbrick():
 
 def drawcube():
     print(selection.get())
-    confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(3))
+    confirmbutton = Button(geoablak, text="Kiválasztás", command=lambda: handoff(3))
     confirmbutton.place(x=250, y=320)
     u149.create_rectangle(30,10,320,130, fill='black')
     u149.create_line(127, 35, 186, 35, fill="white", width=5)
@@ -47,7 +46,7 @@ def drawcube():
 
 def drawcircle():
     print(selection.get())
-    confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(4))
+    confirmbutton = Button(geoablak, text="Kiválasztás", command=lambda: handoff(4))
     confirmbutton.place(x=250, y=320)
     u149.create_rectangle(30,10,320,130, fill='black')
     u149.create_oval(127,33, 186, 93, outline="white" , width=5)
