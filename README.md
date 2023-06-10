@@ -17,3 +17,4 @@
 - 06/07: Színes játék fejlesztése
 - 06/08: Terület/Kerület számító elkezdése, színes játék fejlesztése, főmenü bugfixelése
 - 06/09: Színes játék, Terület/Kerület számító fejlesztése, főmenü bugfixelése
+- 06/10: Terület/Kerület számító fejlesztése
