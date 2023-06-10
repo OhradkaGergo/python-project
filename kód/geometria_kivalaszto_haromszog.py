@@ -1,56 +1,22 @@
 from tkinter import *
 
-
 def handoff(id): 
     if id == 1:
-        with open("python-project\kód\geometria_kivalaszto_haromszog.py") as li:
+        with open("python-project\kód\geometria_haromszog_terulet.py") as li:
             exec(li.read())
     elif id == 2:
-        with open("python-project\kód\geometria_kivalaszto_teglalap.py") as li:
-            exec(li.read())
-    elif id == 3:
-        with open("python-project\kód\geometria_kivalaszto_negyzet.py") as li:
-            exec(li.read())
-    elif id == 4:
-        with open("python-project\kód\geometria_kivalaszto_kor.py") as li:
+        with open("python-project\kód\geometria_haromszog_kerulet.py") as li:
             exec(li.read())
 
-def drawtriangle():
-    print(selection.get())
+def drawtris():
     confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(1))
     confirmbutton.place(x=250, y=320)
-    u149.create_rectangle(30,10,320,130, fill='black')
-    u149.create_line(186, 92, 186, 25, fill="white", width=5)
-    u149.create_line(109, 91, 187, 25, fill="white", width=5)
-    u149.create_line(110, 90, 188, 90, fill="white", width=5)
-
-
-def drawbrick():
-    print(selection.get())
-    confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(2))
-    confirmbutton.place(x=250, y=320)
-    u149.create_rectangle(30,10,320,130, fill='black')
-    u149.create_line(110, 90, 110, 35, fill="white", width=5)
-    u149.create_line(108, 90, 203, 90, fill="white", width=5)
-    u149.create_line(200, 90, 200, 35, fill="white", width=5)
-    u149.create_line(108, 35, 203, 35, fill="white", width=5)
-
-def drawcube():
-    print(selection.get())
-    confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(3))
-    confirmbutton.place(x=250, y=320)
-    u149.create_rectangle(30,10,320,130, fill='black')
-    u149.create_line(127, 35, 186, 35, fill="white", width=5)
-    u149.create_line(127, 93, 127, 33, fill="white", width=5)
-    u149.create_line(127, 90, 186, 90, fill="white", width=5)
-    u149.create_line(186, 33, 186, 93, fill="white", width=5)
-
-def drawcircle():
-    print(selection.get())
-    confirmbutton = Button(geoablak, text="Kiválasztás", command=handoff(4))
-    confirmbutton.place(x=250, y=320)
-    u149.create_rectangle(30,10,320,130, fill='black')
-    u149.create_oval(127,33, 186, 93, outline="white" , width=5)
+    u149.create_polygon(30, 120, 125, 120, 125, 10, fill="green", outline="blue")
+    u149.create_polygon(200, 120, 290, 120, 290, 10, fill="white", outline="blue", width=2)
+    return
+#u149.create_rectangle(30,10,320,130, fill='black')
+#Y height: 120
+#X width: 290 (145)
 
 geoablak = Tk()
 geoablak.title("Python SPAR projekt")
@@ -106,19 +72,15 @@ can1.place(x=150,y=350)
 
 
 u149 = Canvas(geoablak, width=290, height=120) #uoooh
-u149.create_rectangle(30,10,320,130, fill='black')
-haromszogoption = Radiobutton(geoablak, text="Háromszög", variable=selection, value=1, command=drawtriangle)
-haromszogoption.select()
-drawtriangle()
-teglalapoption = Radiobutton(geoablak, text="Téglalap", variable=selection, value=2, command=drawbrick)
-negyszogoption = Radiobutton(geoablak, text="Négyszög", variable=selection, value=3, command=drawcube)
-koroption = Radiobutton(geoablak, text="Kör", variable=selection, value=4, command=drawcircle)
+u149.create_rectangle(30,10,320,130, fill='white', outline="white")
+teruletoption = Radiobutton(geoablak, text="Terület", variable=selection, value=1)
+teruletoption.select()
+keruletoption = Radiobutton(geoablak, text="Kerület", variable=selection, value=2)
+drawtris()
 
 
-haromszogoption.place(x=200,y=117)
-teglalapoption.place(x=200,y=137)
-negyszogoption.place(x=300, y=117)
-koroption.place(x=300,y=137)
-u149.place(x=130, y=170)
+teruletoption.place(x=175,y=117)
+keruletoption.place(x=340,y=117)
+u149.place(x=130, y=135)
 
 geoablak.mainloop()
