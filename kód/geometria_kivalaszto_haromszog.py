@@ -70,7 +70,7 @@ def haromszog(masterwindow):
     videos = Menu(menu6,tearoff="off", )
     videos.add_command(label = "Kilépés", command = haromszogselect.destroy, underline = 0,background="#EC4949")
     menu6.config(menu = videos)
-    ize2=Label(text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
+    ize2=Label(haromszogselect, text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
     ize2.place(x=30,y=350)
     can1 = Canvas(haromszogselect, width=10, height=10)
     photo = PhotoImage(file='python-project\képek\spar-logo-1.png')

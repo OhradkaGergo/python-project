@@ -1,4 +1,7 @@
 from tkinter import* 
+from geometria_fomenu import geomenu
+from szines_jatek import szinjatek
+from url_rovidito import urlshort
 
 
 foablak = Tk()
@@ -46,8 +49,8 @@ uploads = Menu(menu4 ,tearoff="off")
 uploads.add_command(label = "Hőmérséklet váltó", underline = 0, background="#EC4949")
 uploads.add_command(label = "Pénznem váltó", underline = 0,background="#EC4949")
 uploads.add_command(label = "Mértékegység váltó", underline = 0,background="#EC4949")
-uploads.add_command(label = "Terület/Kerület", underline = 0, background="#EC4949")
-uploads.add_command(label = "URL rövidítő", underline = 0,background="#EC4949")
+uploads.add_command(label = "Terület/Kerület", underline = 0, background="#EC4949", command=lambda: geomenu(foablak))
+uploads.add_command(label = "URL rövidítő", underline = 0,background="#EC4949", command=lambda: urlshort(foablak))
 uploads.add_command(label = "Jelszó erősség",  underline = 0,background="#EC4949")
 
 menu4.config(menu = uploads)
@@ -58,7 +61,7 @@ menu4.config(menu = uploads)
 menu5 = Menubutton(menusor, text = "Játékok", underline = 0,bg="#EC4949", width=15, height=2)
 menu5.pack(side = LEFT)
 videos = Menu(menu5,tearoff="off")
-videos.add_command(label = "Színes játék", underline = 0, background="#EC4949")
+videos.add_command(label = "Színes játék", underline = 0, background="#EC4949", command=lambda: szinjatek(foablak))
 videos.add_command(label = "Vízesés modell quiz", underline = 0,background="#EC4949")
 
 menu5.config(menu = videos)
@@ -73,11 +76,11 @@ ize=Label(text="Ü d v ö z ö l j ü k !", fg="green",  font=('Arial', 35) )
 ize.place(x=30,y=200)
 
 
-ize2=Label(text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
+ize2=Label(foablak, text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
 ize2.place(x=30,y=350)
 
 can1 = Canvas(foablak, width=10, height=10)
-photo = PhotoImage(file='spar-logo-1.png',)
+photo = PhotoImage(file='python-project\képek\spar-logo-1.png',)
 item = can1.create_image(20, 20, image = photo)
 can1.place(x=150,y=350)
 

@@ -1,12 +1,10 @@
-#PLACEHOLDER
 from tkinter import *
+import math
 
 def teruletwindow(masterwindow):
     def calc(*args):
-        a = alengthscan.get()
-        b = blengthscan.get()
-        c = clengthscan.get()
-        res = int(a) + int(b) + int(c)
+        r = rlengthscan.get()
+        res = (math.pi) * (int(r)**2)
         results.delete(0, END)
         results.insert(0, str(res))
     kort = Toplevel(masterwindow, height=400, width=600)
@@ -15,9 +13,7 @@ def teruletwindow(masterwindow):
     kort.maxsize(width = 600, height = 400)
     selection = IntVar()
     selection.set(1)
-    alengthscan = StringVar()
-    blengthscan = StringVar()
-    clengthscan = StringVar()
+    rlengthscan = StringVar()
     menusor = Frame(kort, width=600, height=400, bd=10, highlightbackground="green", highlightthickness=10)
     menusor.pack(side = TOP, fill = X)
     menu1 = Menubutton(menusor, text = "Főoldal", underline = 0, bg="#EC4949", width=15, height=2)
@@ -57,33 +53,26 @@ def teruletwindow(masterwindow):
     videos = Menu(menu6,tearoff="off", )
     videos.add_command(label = "Kilépés", command = kort.destroy, underline = 0,background="#EC4949")
     menu6.config(menu = videos)
-    ize2=Label(text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
+    ize2=Label(kort, text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
     ize2.place(x=30,y=350)
     can1 = Canvas(kort, width=10, height=10)
     photo = PhotoImage(file='python-project\képek\spar-logo-1.png')
     item = can1.create_image(20, 20, image = photo)
     can1.place(x=150,y=350)
 
-    textbox = Label(kort, text="Háromszög Kerület", fg="green")
-    a = Label(kort, text="a", fg="green")
-    alength = Entry(kort, textvariable=alengthscan, width=35)
-    alength.focus()
-    b = Label(kort, text="b", fg="green")
-    blength = Entry(kort, textvariable=blengthscan, width=35)
-    c = Label(kort, text="c", fg="green")
-    clength = Entry(kort, textvariable=clengthscan, width=35)
-    alengthscan.trace_add("write", calc)
-    blengthscan.trace_add("write", calc)
-    clengthscan.trace_add("write", calc)
+    textbox = Label(kort, text="Kör Terület", fg="green")
+    r = Label(kort, text="r", fg="green")
+    rlength = Entry(kort, textvariable=rlengthscan, width=35)
+    rlength.focus()
+    rlengthscan.trace_add("write", calc)
     results = Entry(kort, width=35)
     resulttext = Label(kort, text="Eredmény:", fg="green")
 
-    b.place(x=45, y=175)
-    blength.place(x=65,y=175)
-    alength.place(x=65, y=145)
-    a.place(x=45, y=145)
+
+    rlength.place(x=65, y=145)
+    r.place(x=45, y=145)
     textbox.place(x=60, y=115)
-    results.place(x=65, y=265)
-    resulttext.place(x=1, y=265)
-    c.place(x=45, y=205)
-    clength.place(x=65, y=205)
+    results.place(x=65, y=205)
+    resulttext.place(x=1, y=205)
+
+    
