@@ -2,7 +2,7 @@ from tkinter import*
 from geometria_fomenu import geomenu
 from szines_jatek import szinjatek
 from url_rovidito import urlshort
-
+from mertekegyseg import mertvaltas
 
 foablak = Tk()
 foablak.title("Python SPAR projekt")
@@ -48,7 +48,7 @@ uploads = Menu(menu4 ,tearoff="off")
 
 uploads.add_command(label = "Hőmérséklet váltó", underline = 0, background="#EC4949")
 uploads.add_command(label = "Pénznem váltó", underline = 0,background="#EC4949")
-uploads.add_command(label = "Mértékegység váltó", underline = 0,background="#EC4949")
+uploads.add_command(label = "Mértékegység váltó", underline = 0,background="#EC4949", command=lambda: mertvaltas(foablak))
 uploads.add_command(label = "Terület/Kerület", underline = 0, background="#EC4949", command=lambda: geomenu(foablak))
 uploads.add_command(label = "URL rövidítő", underline = 0,background="#EC4949", command=lambda: urlshort(foablak))
 uploads.add_command(label = "Jelszó erősség",  underline = 0,background="#EC4949")
