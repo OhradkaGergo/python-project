@@ -31,7 +31,7 @@ def mertvaltas(masterwindow):
             entry_eredmeny.delete(0, END)
             entry_eredmeny.insert(0, "Rossz!")
 
-    mert_egy_ablak = Tk()
+    mert_egy_ablak = Toplevel(masterwindow)
     mert_egy_ablak.title("Mértékegység átváltó")
     mert_egy_ablak.minsize(width = 600, height = 400)
     mert_egy_ablak.maxsize(width = 600, height = 400)
