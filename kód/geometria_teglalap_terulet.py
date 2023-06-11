@@ -1,34 +1,21 @@
 from tkinter import *
-from geometria_kor_kerulet import keruletwindow
-from geometria_kor_terulet import teruletwindow
 
-def kor(masterwindow):
-    def handoff(id): 
-        if id == 1:
-            teruletwindow(korselect)
-        elif id == 2:
-            keruletwindow(korselect)
-
-    def drawcirc():
-        u149.create_oval(30, 30, 120, 120, outline="blue", fill="green")
-        u149.create_oval(200, 30, 290, 120, outline="blue", fill="white", width=2)
-
-    def drawt():
-        confirmbutton = Button(korselect, text="Kiválasztás", command=lambda: handoff(1))
-        confirmbutton.place(x=250, y=320)
-
-
-    def drawk():
-        confirmbutton = Button(korselect, text="Kiválasztás", command=lambda: handoff(2))
-        confirmbutton.place(x=250, y=320)
-
-    korselect = Toplevel(masterwindow, width=600, height=400)
-    korselect.title("Python SPAR projekt")
-    korselect.minsize(width = 600, height = 400)
-    korselect.maxsize(width = 600, height = 400)
+def teglalapterulet(masterwindow):
+    def calc(*args):
+        a = alengthscan.get()
+        b = blengthscan.get()
+        res = (int(a) * int(b))
+        results.delete(0, END)
+        results.insert(0, str(res))
+    teglat = Toplevel(masterwindow, height=400, width=600)
+    teglat.title("Python SPAR projekt")
+    teglat.minsize(width = 600, height = 400)
+    teglat.maxsize(width = 600, height = 400)
     selection = IntVar()
     selection.set(1)
-    menusor = Frame(korselect, width=600, height=400, bd=10, highlightbackground="green", highlightthickness=10)
+    alengthscan = StringVar()
+    blengthscan = StringVar()
+    menusor = Frame(teglat, width=600, height=400, bd=10, highlightbackground="green", highlightthickness=10)
     menusor.pack(side = TOP, fill = X)
     menu1 = Menubutton(menusor, text = "Főoldal", underline = 0, bg="#EC4949", width=15, height=2)
     menu1.pack(side = LEFT)
@@ -65,26 +52,33 @@ def kor(masterwindow):
     menu6 = Menubutton(menusor, text = "Kilépés", underline = 0,bg="#EC4949", width=15, height=2)
     menu6.pack(side = LEFT)
     videos = Menu(menu6,tearoff="off", )
-    videos.add_command(label = "Kilépés", command = korselect.destroy, underline = 0,background="#EC4949")
+    videos.add_command(label = "Kilépés", command = teglat.destroy, underline = 0,background="#EC4949")
     menu6.config(menu = videos)
-    ize2=Label(korselect, text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
+    ize2=Label(teglat, text="Sponsored by SPAR ™", fg="green",font=('Silkscreen', 8))
     ize2.place(x=30,y=350)
-    can1 = Canvas(korselect, width=10, height=10)
+    can1 = Canvas(teglat, width=10, height=10)
     photo = PhotoImage(file='python-project\képek\spar-logo-1.png')
     item = can1.create_image(20, 20, image = photo)
     can1.place(x=150,y=350)
 
+    textbox = Label(teglat, text="Téglalap Terület", fg="green")
+    a = Label(teglat, text="a", fg="green")
+    alength = Entry(teglat, textvariable=alengthscan, width=35)
+    alength.focus()
+    b = Label(teglat, text="b", fg="green")
+    blength = Entry(teglat, textvariable=blengthscan, width=35)
+    alengthscan.trace_add("write", calc)
+    blengthscan.trace_add("write", calc)
+    results = Entry(teglat, width=35)
+    resulttext = Label(teglat, text="Eredmény:", fg="green")
 
-    u149 = Canvas(korselect, width=290, height=120) #uoooh
-    teruletoption = Radiobutton(korselect, text="Terület", variable=selection, value=1, command=drawt)
-    teruletoption.select()
-    keruletoption = Radiobutton(korselect, text="Kerület", variable=selection, value=2, command=drawk)
-    drawcirc()
-    drawt()
 
+    alength.place(x=65, y=145)
+    a.place(x=45, y=145)
+    blength.place(x=65, y=175)
+    b.place(x=45, y=175)
+    textbox.place(x=60, y=115)
+    results.place(x=65, y=235)
+    resulttext.place(x=1, y=235)
 
-    teruletoption.place(x=175,y=117)
-    keruletoption.place(x=340,y=117)
-    u149.place(x=130, y=135)
-
-    korselect.mainloop()
+    
