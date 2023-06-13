@@ -18,3 +18,4 @@
 - 06/08: Terület/Kerület számító elkezdése, színes játék fejlesztése, főmenü bugfixelése
 - 06/09: Színes játék, Terület/Kerület számító fejlesztése, főmenü bugfixelése
 - 06/10: Terület/Kerület számító fejlesztése
+- 06/11: Geometria modul, színes játék, URL rövidítő, mértékegység átváltó fejlesztése
