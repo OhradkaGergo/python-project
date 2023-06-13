@@ -3,6 +3,8 @@ from geometria_fomenu import geomenu
 from szines_jatek import szinjatek
 from url_rovidito import urlshort
 from mertekegyseg import mertvaltas
+from jelszo_erosseg import jel_ero
+from homerseklet_valto import homer_valt
 
 foablak = Tk()
 foablak.title("Python SPAR projekt")
@@ -46,12 +48,12 @@ menu4 = Menubutton(menusor, text = "Spar", underline = 0,bg="#EC4949", width=15,
 menu4.pack(side = LEFT)
 uploads = Menu(menu4 ,tearoff="off")
 
-uploads.add_command(label = "Hőmérséklet váltó", underline = 0, background="#EC4949")
+uploads.add_command(label = "Hőmérséklet váltó", underline = 0, background="#EC4949", command=lambda: homer_valt(foablak))
 uploads.add_command(label = "Pénznem váltó", underline = 0,background="#EC4949")
 uploads.add_command(label = "Mértékegység váltó", underline = 0,background="#EC4949", command=lambda: mertvaltas(foablak))
 uploads.add_command(label = "Terület/Kerület", underline = 0, background="#EC4949", command=lambda: geomenu(foablak))
 uploads.add_command(label = "URL rövidítő", underline = 0,background="#EC4949", command=lambda: urlshort(foablak))
-uploads.add_command(label = "Jelszó erősség",  underline = 0,background="#EC4949")
+uploads.add_command(label = "Jelszó erősség",  underline = 0,background="#EC4949", command=lambda: jel_ero(foablak))
 
 menu4.config(menu = uploads)
 
