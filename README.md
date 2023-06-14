@@ -19,3 +19,5 @@
 - 06/09: Színes játék, Terület/Kerület számító fejlesztése, főmenü bugfixelése
 - 06/10: Terület/Kerület számító fejlesztése
 - 06/11: Geometria modul, színes játék, URL rövidítő, mértékegység átváltó fejlesztése
+- 06/13: Geo.,Sz. J., URL röv., Mért. Átv., Jelszó erősség, Hő Átv. fejlesztésének befejezése
+- 06/14: Projekt befejezése
